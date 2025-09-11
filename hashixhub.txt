@@ -1,0 +1,236 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local LocalPlayer = Players.LocalPlayer
+local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
+
+local Window = Rayfield:CreateWindow({
+   Name = "HashixHub",
+   Icon = 0,
+   LoadingTitle = "HashixHub",
+   LoadingSubtitle = "by OmgItsHashix",
+   ShowText = "Rayfield",
+   Theme = "Default",
+   ToggleUIKeybind = "K",
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false,
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil,
+      FileName = "Big Hub"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "noinvitelink",
+      RememberJoins = true
+   },
+   KeySystem = true,
+   KeySettings = {
+       Title = "HashixHub",
+       Subtitle = "Key System",
+       Note = "Key: pastebin.com/raw/YGtSNXRg",
+       FileName = "Key",
+       SaveKey = true,
+       GrabKeyFromSite = false,
+       Key = {"Sub_to_@OmgItsHashix_on_YT"},
+   }
+})  -- Close the CreateWindow call here
+
+-- Now create tabs and UI elements outside the table
+
+local Tab = Window:CreateTab("Main", "app-window")
+Tab:CreateSection("Scripts for any game.")
+
+Tab:CreateButton({
+   Name = "Fly GUI V3",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+   end,
+})
+
+Tab:CreateInput({
+    Name = "FOV",
+    PlaceholderText = "Field of View",
+    RemoveTextAfterFocusLost = true,
+    Callback = function(input)
+        local fov = tonumber(input)
+        if fov and fov >= 1 and fov <= 180 then
+            workspace.CurrentCamera.FieldOfView = fov
+        end
+    end
+})
+
+Tab:CreateButton({
+   Name = "HappaTAS",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/s14JLVBJ", true))()
+   end,
+})
+
+Tab:CreateButton({
+   Name = "Infinite Jump",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/V5PQy3y0"))()
+   end,
+})
+
+Tab:CreateButton({
+   Name = "Infinite Yield",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+   end,
+})
+
+Tab:CreateButton({
+   Name = "LALOL Backdoor Scanner",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/A1G1L1RQ"))()
+   end,
+})
+
+Tab:CreateButton({
+   Name = "Name ESP",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/HMPvMneF"))()
+   end,
+})
+
+Tab:CreateButton({
+   Name = "Spin",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/HV2Szr9B"))()
+   end,
+})
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "MyPositionDisplay"
+screenGui.ResetOnSpawn = false
+screenGui.Parent = PlayerGui
+
+local posLabel = Instance.new("TextLabel")
+posLabel.Size = UDim2.new(0, 350, 0, 30)
+posLabel.Position = UDim2.new(0.5, -175, 0, 100)
+posLabel.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+posLabel.BackgroundTransparency = 0.5
+posLabel.TextColor3 = Color3.new(1,1,1)
+posLabel.TextScaled = true
+posLabel.Font = Enum.Font.SourceSansBold
+posLabel.Text = "Position display is OFF"
+posLabel.Visible = false
+posLabel.Parent = screenGui
+posLabel.ZIndex = 10
+
+local uicorner = Instance.new("UICorner")
+uicorner.CornerRadius = UDim.new(0, 12)
+uicorner.Parent = posLabel
+
+local showPosition = false
+
+Tab:CreateToggle({
+    Name = "Position",
+    CurrentValue = false,
+    Flag = "ShowPositionToggle",
+    Callback = function(value)
+        showPosition = value
+        posLabel.Visible = value
+        if not value then
+            posLabel.Text = "Position display is OFF"
+        end
+    end
+})
+
+RunService.RenderStepped:Connect(function()
+    if showPosition then
+        local character = LocalPlayer.Character
+        if character and character:FindFirstChild("HumanoidRootPart") then
+            local pos = character.HumanoidRootPart.Position
+            posLabel.Text = string.format("Your Position: X: %.1f, Y: %.1f, Z: %.1f", pos.X, pos.Y, pos.Z)
+        else
+            posLabel.Text = "Character not loaded"
+        end
+    end
+end)
+
+local MM2Tab = Window:CreateTab("MM2", "app-window")
+MM2Tab:CreateSection("Scripts for MM2.")
+
+MM2Tab:CreateButton({
+   Name = "Role ESP",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/Ihaveash0rtnamefordiscord/Releases/main/MurderMystery2HighlightESP"))(' Watermelon ?')
+   end,
+})
+
+Tab:CreateButton({
+   Name = "Name ESP",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/HMPvMneF"))()
+   end,
+})
+
+MM2Tab:CreateDivider("Hubs")
+
+MM2Tab:CreateButton({
+   Name = "vertex",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/Vertex-GG/MM2/refs/heads/main/AutoFarmer%25Murdery.lua"))()
+   end,
+})
+
+local BPTab = Window:CreateTab("B&P", "app-window")
+BPTab:CreateSection("Scripts for Blocks n' Props.")
+
+BPTab:CreateButton({
+   Name = "F3X",
+   Callback = function()
+      loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
+   end,
+})
+
+local TCOTab = Window:CreateTab("TCO", "app-window")
+TCOTab:CreateSection("Scripts for The Chosen One.")
+
+TCOTab:CreateButton({
+   Name = "OP Script",
+   Callback = function()
+      loadstring(game:HttpGet("https://rawscripts.net/raw/The-Chosen-One-OP-SCRIPT-18120"))()
+   end,
+})
+
+TCOTab:CreateButton({
+   Name = "Extra Stuff",
+   Callback = function()
+      loadstring(game:HttpGet("https://rawscripts.net/raw/The-Chosen-One-Extra-Stuff-18127"))()
+   end,
+})
+
+TCOTab:CreateButton({
+   Name = "Server Hopper",
+   Callback = function()
+      loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Server-Hopper-21123"))()
+   end,
+})
+
+TCOTab:CreateButton({
+   Name = "Unanchored Part Abuse",
+   Callback = function()
+      loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Unanchored-Part-Abuse-WIP-23861"))()
+   end,
+})
+
+TCOTab:CreateButton({
+   Name = "B-Kit Stealer",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/1AreYouMental110/Bkit-Script/refs/heads/main/BkitScript.lua"))()
+   end,
+})
+
+local NinetyNineTab = Window:CreateTab("99NitF", "app-window")
+NinetyNineTab:CreateSection("Scripts for 99 Nights in the Forest.")
+
+NinetyNineTab:CreateButton({
+   Name = "Speed Hub X",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+   end,
+})
