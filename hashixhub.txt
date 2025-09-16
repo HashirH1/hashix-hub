@@ -24,15 +24,15 @@ local Window = Rayfield:CreateWindow({
       Invite = "noinvitelink",
       RememberJoins = true
    },
-   KeySystem = true,
+   KeySystem = false,
    KeySettings = {
        Title = "HashixHub",
        Subtitle = "Key System",
-       Note = "Key: pastebin.com/raw/YGtSNXRg",
+       Note = "",
        FileName = "Key",
        SaveKey = true,
        GrabKeyFromSite = false,
-       Key = {"Sub_to_@OmgItsHashix_on_YT"},
+       Key = {"Key"},
    }
 })  -- Close the CreateWindow call here
 
