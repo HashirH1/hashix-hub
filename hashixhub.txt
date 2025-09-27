@@ -24,15 +24,15 @@ local Window = Rayfield:CreateWindow({
       Invite = "noinvitelink",
       RememberJoins = true
    },
-   KeySystem = false,
+   KeySystem = true,
    KeySettings = {
        Title = "HashixHub",
        Subtitle = "Key System",
-       Note = "",
+       Note = "work.ink/22wh/3kcb23xp",
        FileName = "Key",
        SaveKey = true,
        GrabKeyFromSite = false,
-       Key = {"Key"},
+       Key = {"HashixHub"},
    }
 })  -- Close the CreateWindow call here
 
@@ -48,29 +48,17 @@ Tab:CreateButton({
    end,
 })
 
-Tab:CreateInput({
-    Name = "FOV",
-    PlaceholderText = "Field of View",
-    RemoveTextAfterFocusLost = true,
-    Callback = function(input)
-        local fov = tonumber(input)
-        if fov and fov >= 1 and fov <= 180 then
-            workspace.CurrentCamera.FieldOfView = fov
-        end
-    end
-})
-
-Tab:CreateButton({
-   Name = "HappaTAS",
-   Callback = function()
-      loadstring(game:HttpGet("https://pastebin.com/raw/s14JLVBJ", true))()
-   end,
-})
-
 Tab:CreateButton({
    Name = "Infinite Jump",
    Callback = function()
       loadstring(game:HttpGet("https://pastebin.com/raw/V5PQy3y0"))()
+   end,
+})
+
+Tab:CreateButton({
+   Name = "Spin",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/HV2Szr9B"))()
    end,
 })
 
@@ -82,23 +70,16 @@ Tab:CreateButton({
 })
 
 Tab:CreateButton({
+   Name = "HappaTAS",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/s14JLVBJ", true))()
+   end,
+})
+
+Tab:CreateButton({
    Name = "LALOL Backdoor Scanner",
    Callback = function()
       loadstring(game:HttpGet("https://pastebin.com/raw/A1G1L1RQ"))()
-   end,
-})
-
-Tab:CreateButton({
-   Name = "Name ESP",
-   Callback = function()
-      loadstring(game:HttpGet("https://pastebin.com/raw/HMPvMneF"))()
-   end,
-})
-
-Tab:CreateButton({
-   Name = "Spin",
-   Callback = function()
-      loadstring(game:HttpGet("https://pastebin.com/raw/HV2Szr9B"))()
    end,
 })
 
@@ -127,7 +108,7 @@ uicorner.Parent = posLabel
 local showPosition = false
 
 Tab:CreateToggle({
-    Name = "Position",
+    Name = "Show My Position",
     CurrentValue = false,
     Flag = "ShowPositionToggle",
     Callback = function(value)
@@ -157,14 +138,7 @@ MM2Tab:CreateSection("Scripts for MM2.")
 MM2Tab:CreateButton({
    Name = "Role ESP",
    Callback = function()
-      loadstring(game:HttpGet("https://raw.githubusercontent.com/Ihaveash0rtnamefordiscord/Releases/main/MurderMystery2HighlightESP"))(' Watermelon ?')
-   end,
-})
-
-Tab:CreateButton({
-   Name = "Name ESP",
-   Callback = function()
-      loadstring(game:HttpGet("https://pastebin.com/raw/HMPvMneF"))()
+      loadstring(game:HttpGet("https://pastebin.com/raw/eYrnUDix"))()
    end,
 })
 
