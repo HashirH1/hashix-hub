@@ -81,6 +81,13 @@ Tab:CreateButton({
    end,
 })
 
+Tab:CreateButton({
+   Name = "R6 Emotes Menu",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/ocfi/aqua-hub-is-a-skid-lol/refs/heads/main/animatrix"))()
+   end,
+})
+
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "MyPositionDisplay"
 screenGui.ResetOnSpawn = false
