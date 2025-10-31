@@ -268,7 +268,7 @@ TCOTab:Button({
 })
 
 TCOTab:Button({
-	Title = "VPLI HUB V2",
+	Title = "Ender Hub",
 	Icon = "layers",
 	Callback = function()
 		loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/e79d8fc323360e67173d734cad9c991a.lua"))()
