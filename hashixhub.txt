@@ -18,7 +18,7 @@ end
 
 local Window = WindUI:CreateWindow({
 	Title = "HashixHub",
-	Author = "by OmgItsHashix",
+	Author = "by TheServerSide5",
 	Folder = "ftgshub",
 	NewElements = true,
 	HideSearchBar = false,
