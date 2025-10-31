@@ -271,7 +271,7 @@ TCOTab:Button({
 	Title = "Ender Hub",
 	Icon = "layers",
 	Callback = function()
-		loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/e79d8fc323360e67173d734cad9c991a.lua"))()
+		loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/4081fd0aabac7523"))()
 	end
 })
 
